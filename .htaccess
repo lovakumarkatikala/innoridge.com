@@ -1,0 +1,18 @@
+# Enable URL rewriting
+RewriteEngine On
+
+# Ensure that requests are not pointing to actual directories
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Rewrite rule to add .html extension if the requested URL matches an existing .html file
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ $1.html [L]
+
+# Redirect from /file.html to /file (optional)
+RewriteCond %{THE_REQUEST} \s/+(.+)\.html [NC]
+RewriteRule ^ %1 [R=301,L]
+
+# Redirect old URLs to new lowercase URLs
+Redirect 301 /About.html /about.html
+Redirect 301 /Services.html /services.html
+Redirect 301 /Contact.html /contact.html
