@@ -3,13 +3,20 @@
 
 <head>
     <meta charset="utf-8">
-    <script src="js/head.js"></script>
+    <title>InnoRidge Solutions</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="description" content="InnoRidge Solutions - Comprehensive IT solutions for digital transformation and business growth">
+    <meta content="InnoRidge Solutions" name="keywords">
+    
+    <link href="img/IRIcon.ico" rel="icon">
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
 
-    <header id="navbar-header">
-        <nav class="navbar navbar-expand-lg navbar-light">
+    <header id="navbar-header" >
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
             <div class="navbar-container">
                 <a href="index.html" class="navbar-brand">
                     <img src="img/IRLogo.png" alt="InnoRidge Logo" class="logo-img">
@@ -22,16 +29,16 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a href="about.html" class="nav-link">About</a>
+                            <a href="#about" class="nav-link">About</a>
+                        </li>                        
+                        <li class="nav-item">
+                            <a href="#services" class="nav-link">Services</a>
                         </li>
                         <li class="nav-item">
-                            <a href="services.html" class="nav-link">Services</a>
+                            <a href="#why" class="nav-link">Why</a>
                         </li>
                         <li class="nav-item">
-                            <a href="team-augmentation.html" class="nav-link">Team Augmentation</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="contact.html" class="nav-link">Contact</a>
+                            <a href="#contact" class="nav-link">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -40,7 +47,7 @@
     </header>
 
     <main>
-        <section class="hero-section hero-compact">
+        <section class="hero-section hero-compact" id="about">
             <div class="hero-content">
                 <h1>AI-Powered Development Solutions</h1>
                 <p class="hero-subtitle">Intelligent software built for businesses of any size</p>
@@ -49,12 +56,12 @@
                     <span class="hero-badge">⚡ Fast Delivery</span>
                     <span class="hero-badge">✓ Quality Assured</span>
                 </div>
-                <a href="contact.html" class="btn btn-primary">Get Started Today</a>
+                <a href="#contact" class="btn btn-primary">Get Started Today</a>
             </div>
         </section>
 
-        <section class="section-overview">
-        <h2 class="section-heading">Our End-to-End Solutions</h2>
+        <section class="section-overview" id="services">
+        <h2 class="section-heading">Our End-to-End Services</h2>
         <p class="section-subtitle">Complete technology services designed to transform your business</p>
         <div class="services-grid">
             <div class="service-box">
@@ -83,7 +90,7 @@
             </div>
         </section>
 
-        <section class="section-overview">
+        <section class="section-overview" id="why">
         <h2 class="section-heading">Why Choose InnoRidge</h2>
         <p class="section-subtitle">Built on expertise, integrity, and proven results</p>
         <div class="services-grid">
@@ -106,10 +113,25 @@
         </div>
         </section>
 
-        <section class="section-overview">
+        <section class="section-overview" id="contact">
             <h2 class="section-heading">Ready to Transform Your Business?</h2>
-            <p class="section-subtitle">Let's discuss how InnoRidge can help you achieve your technology goals</p>
-            <a href="contact.html" class="btn btn-primary">Schedule a Consultation</a>
+            <div class="section-subtitle">Contact us today for a free consultation and project estimate</div>
+            <div class="contact-info">
+                <a href="https://www.linkedin.com/company/innoridge" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin"></i>
+                    <div class="link-content">
+                        <span>LinkedIn:</span>
+                        <span class="link-info">https://www.linkedin.com/company/innoridge</span>
+                    </div>
+                </a>
+                <a href="mailto:info@innoridge.com">
+                    <i class="fas fa-envelope"></i>
+                    <div class="link-content">
+                        <span>Email:</span>
+                        <span class="link-info">info@innoridge.com</span>
+                    </div>
+                </a>
+            </div>
         </section>
 
     </main>
@@ -117,6 +139,46 @@
     <script src="lib/jquery/jquery.min.js"></script>
     <script src="lib/jquery/jquery-migrate.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Function to get the hash value from URL (e.g., #services)
+        function getHashValue() {
+            return location.hash.substring(1); // Remove the '#' character
+        }
+
+        // Function to show/hide sections based on hash
+        function toggleSections() {
+            const hash = getHashValue();
+            const sections = ['about', 'services', 'why', 'contact'];
+
+            sections.forEach(sectionId => {
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    if (hash === sectionId) {
+                        section.style.display = 'block';
+                    } else {
+                        section.style.display = 'none';
+                    }
+                }
+            });
+
+            // If no hash or invalid hash, show all sections
+            if (!hash || !sections.includes(hash)) {
+                sections.forEach(sectionId => {
+                    const section = document.getElementById(sectionId);
+                    if (section) {
+                        section.style.display = 'block';
+                    }
+                });
+            }
+        }
+
+        // Run on page load
+        document.addEventListener('DOMContentLoaded', toggleSections);
+
+        // Run when hash changes (e.g., when clicking nav links)
+        window.addEventListener('hashchange', toggleSections);
+    </script>
 
 </body>
 

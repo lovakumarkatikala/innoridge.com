@@ -339,6 +339,7 @@ h6 {
   position: sticky;
   top: 0;
   z-index: 1000;
+  padding-bottom: 75px;
 }
 
 .navbar {
@@ -502,7 +503,7 @@ h6 {
 
 .section-overview {
   background: white;
-  padding: 50px 0px;
+  padding: 25px 0px;
 }
 
 .section-subtitle {
@@ -1010,6 +1011,13 @@ h6 {
   color: white;
 }
 
+.social-link .link-info {
+  font-size: 0.85rem;
+  color: inherit;
+  opacity: 0.8;
+  word-break: break-all;
+}
+
 .contact-form-section {
   background: #f8f9fa;
   padding: 40px;
@@ -1123,25 +1131,3 @@ h6 {
   text-align: center;
   align-self: center;
 }
-
-.social-link.linkedin {
-  color: #0077B5;
-}
-
-.social-link {
-  font-size: 20px;
-  margin-right: 10px;
-  text-decoration: none;
-}
-
-.social-link:hover,
-.social-link:focus {
-  text-decoration: none;
-}
-
-.social-link.email {
-  color: #ff8601;
-}
-
-/* Responsive Styles */
-/* Responsive Styles (removed temporarily) */

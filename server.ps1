@@ -1,5 +1,5 @@
-$path = "c:\GitHub\innoridge.com"
-$port = 5501
+$path = "c:\innoridge.com"
+$port = 5502
 $listener = New-Object System.Net.HttpListener
 # Bind to localhost to avoid requiring admin reservations and reduce conflicts with system services
 $prefix = "http://localhost:$port/"
