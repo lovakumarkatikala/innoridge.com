@@ -1065,6 +1065,10 @@ h6 {
   color: white;
 }
 
+.link-content {
+  padding: 10px;
+}
+
 .form-note {
   font-size: 0.85rem;
   color: #999;
